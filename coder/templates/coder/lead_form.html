@@ -1,0 +1,13 @@
+{% extends "coder/base.html" %}
+{% block title %}Nuevo Lead{% endblock %}
+{% block content %}
+<h1 class="h4 mb-3">Contacto / Lead</h1>
+<p class="text-muted">Déjanos tus datos y el servicio de interés. Te contactaremos pronto.</p>
+<form method="post" class="row g-3">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="col-12">
+    <button class="btn btn-primary">Enviar</button>
+  </div>
+</form>
+{% endblock %}

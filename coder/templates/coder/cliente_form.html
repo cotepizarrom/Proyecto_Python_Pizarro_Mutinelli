@@ -1,0 +1,12 @@
+{% extends "coder/base.html" %}
+{% block title %}Nuevo Cliente{% endblock %}
+{% block content %}
+<h1 class="h4 mb-3">Crear Cliente</h1>
+<form method="post" class="row g-3">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="col-12">
+    <button class="btn btn-primary">Guardar</button>
+  </div>
+</form>
+{% endblock %}

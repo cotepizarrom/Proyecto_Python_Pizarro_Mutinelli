@@ -1,0 +1,32 @@
+{% extends "coder/base.html" %}
+{% block title %}Buscar Clientes{% endblock %}
+{% block content %}
+<h1 class="h4 mb-3">Buscar Clientes</h1>
+
+<form method="get" class="row g-3 mb-3">
+  <div class="col-md-6">
+    {{ form.q.label_tag }} {{ form.q }}
+  </div>
+  <div class="col-12">
+    <button class="btn btn-outline-primary">Buscar</button>
+  </div>
+</form>
+
+{% if resultados %}
+  <ul class="list-group">
+    {% for c in resultados %}
+      <li class="list-group-item">
+        <strong>{{ c.nombre_empresa }}</strong> — RUT: {{ c.rut }} — Contacto: {{ c.nombre_contacto }} ({{ c.email_contacto }})
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="text-muted">
+    {% if form.is_bound %}
+      Sin resultados para tu búsqueda.
+    {% else %}
+      Ingresa un término y presiona “Buscar”.
+    {% endif %}
+  </p>
+{% endif %}
+{% endblock %}
