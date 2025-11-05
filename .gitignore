@@ -9,7 +9,10 @@ __pycache__/
 .env.*
 .venv
 venv/
+db.sqlite3
+media/
 entorno_virtual/
+*.pyc
 
 # Django
 db.sqlite3

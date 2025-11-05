@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}SUR Consulting — Acerca de{% endblock %}
+
+{% block content %}
+  <h1>Acerca de SUR Consulting</h1>
+  <p>
+    Somos un equipo con foco en <strong>finanzas aplicadas</strong> y <strong>operación contable</strong>,
+    integrando análisis, cumplimiento y tecnología para generar decisiones informadas.
+  </p>
+
+  <h2>Nuestro enfoque</h2>
+  <ul>
+    <li>Rigurosidad técnica y simpleza en la comunicación</li>
+    <li>Procesos claros, trazabilidad y métricas</li>
+    <li>Acompañamiento cercano a dirección y equipos</li>
+  </ul>
+
+  <h2>Servicios</h2>
+  <ul>
+    <li>Finanzas & Control de Gestión (BSC, KPIs, dashboards)</li>
+    <li>Contabilidad & Tributaria (IFRS, SII, cierres mensuales)</li>
+    <li>Remuneraciones (nóminas, conciliaciones y reportería)</li>
+    <li>Proyectos especiales (valuations, M&A, migración ERP)</li>
+  </ul>
+
+  <p>¿Quieres saber más? Mira nuestras publicaciones en <a class="btn" href="{% url 'page_list' %}">Pages</a>.</p>
+{% endblock %}

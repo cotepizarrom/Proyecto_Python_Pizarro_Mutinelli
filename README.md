@@ -1,58 +1,66 @@
-# Proyecto_Python_Pizarro_Mutinelli
-Repositorio de mi proyecto
-# 🧾 Proyecto Django — Consultora SUR Consulting
+# 🌐 Proyecto Final — Aplicación Web en Django  
+### **SUR Consulting Blog**
 
-Este proyecto fue desarrollado como entrega del curso de **Python** y tiene como objetivo construir una aplicación web utilizando el **patrón MVT de Django**, aplicada a una **consultora de servicios contables, financieros y laborales**.
-
----
-
-## 📌 Características principales
-
-- ✅ Implementación de **patrón MVT** (Model–View–Template).  
-- 🧱 **3 Modelos**: `Cliente`, `Servicio` y `Lead`.  
-- 📝 Formularios para crear registros de cada modelo.  
-- 🔍 Buscador de clientes en la base de datos.  
-- 🧭 Navegación clara mediante herencia de templates (`base.html`).  
-- 🛡️ Panel de administración activo y funcional.  
-- 🧰 Uso de Bootstrap para mejorar la interfaz.
+Este proyecto fue desarrollado como entrega final del curso **Python - Coderhouse**.  
+Consiste en una aplicación web tipo blog con funcionalidades completas de autenticación, administración, perfil de usuario, mensajería interna y gestión de contenido (CRUD de páginas).
 
 ---
 
-## 🧱 Modelos
+## 🚀 Descripción General
 
-### 🧑 `Cliente`
-- Nombre de empresa  
-- RUT  
-- Nombre de contacto  
-- Correo electrónico  
-- Teléfono  
-- Fecha de ingreso
+La aplicación simula el sitio web interno de **SUR Consulting**, una consultora financiera y contable.  
+Permite crear y gestionar publicaciones, perfiles de usuario, y enviar mensajes entre miembros registrados.
 
-### 🧾 `Servicio`
-- Nombre del servicio (Contabilidad, Control de Gestión, Payroll, etc.)  
-- Descripción  
-- Precio base mensual
-
-### 📞 `Lead`
-- Nombre y apellido  
-- Correo electrónico  
-- Empresa  
-- Servicio de interés  
-- Comentarios  
-- Estado (nuevo, contactado, cerrado)
-
----
-
-## 🧭 Rutas principales
-
-| URL                        | Descripción                        |
-|----------------------------|------------------------------------|
-| `/`                        | Página de inicio                  |
-| `/clientes/nuevo/`         | Formulario para crear un cliente  |
-| `/servicios/nuevo/`        | Formulario para crear un servicio |
-| `/leads/nuevo/`            | Formulario de contacto (lead)     |
-| `/clientes/buscar/`        | Buscador de clientes              |
-| `/admin/`                  | Panel de administración           |
+### Funcionalidades principales:
+- **Home y About:** páginas informativas accesibles públicamente.  
+- **Gestión de páginas (CRUD):**
+  - Crear, editar, eliminar y listar páginas con título, subtítulo, contenido enriquecido (CKEditor), imagen y fecha.
+  - Búsqueda por título/subtítulo y mensajes de “sin resultados”.
+- **Autenticación de usuarios:**
+  - Registro (`signup`), login, logout y cambio de contraseña.
+- **Perfil de usuario:**
+  - Avatar, biografía y fecha de cumpleaños.
+  - Edición de perfil con subida de imagen.
+- **Mensajería interna:**
+  - Bandeja de entrada (Inbox).
+  - Envío y recepción de mensajes entre usuarios.
+  - Estado de lectura y vista de conversación.
+- **Diseño visual inspirado en la identidad de SUR Consulting:**
+  - Colores: `#0C5957` y `#56CED1`
+  - Estructura limpia, moderna y responsive.
 
 ---
 
+## ⚙️ Tecnologías utilizadas
+- **Lenguaje:** Python 3.13  
+- **Framework:** Django 5.2.7  
+- **Base de datos:** SQLite3 (entorno local)
+- **Editor de texto enriquecido:** django-ckeditor  
+- **Manejo de imágenes:** Pillow  
+- **Frontend:** HTML5, CSS3, Bootstrap base
+
+---
+
+## 📂 Estructura del proyecto
+Proyecto_Python_Pizarro_Mutinelli/
+│
+├── proyecto_coder/ # Configuración principal
+├── pages/ # CRUD de páginas (modelo principal)
+├── accounts/ # Registro, login y perfil de usuario
+├── messaging/ # Mensajería interna
+├── templates/ # Plantillas base (base.html, etc.)
+├── media/ # Carpeta para imágenes de usuario y páginas
+├── static/ # Archivos estáticos (CSS, íconos, etc.)
+├── requirements.txt # Librerías necesarias
+├── .gitignore # Archivos a excluir del repo
+└── manage.py
+
+
+---
+
+## 🧠 Instalación y uso local
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/cotepizarrom/Proyecto_Python_Pizarro_Mutinelli.git
+   cd Proyecto_Python_Pizarro_Mutinelli

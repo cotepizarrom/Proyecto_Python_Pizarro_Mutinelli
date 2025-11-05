@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Mi Perfil — SUR Consulting{% endblock %}
+{% block content %}
+  <h1>Mi Perfil</h1>
+
+  <div style="display:flex; gap:24px; align-items:flex-start;">
+    <div>
+      {% if profile.avatar %}
+        <img src="{{ profile.avatar.url }}" alt="avatar" width="140" style="border-radius:12px;">
+      {% else %}
+        <div style="width:140px;height:140px;background:#E9FBFC;border:1px solid #B6F1F3;border-radius:12px;display:grid;place-items:center;">
+          <span>Sin avatar</span>
+        </div>
+      {% endif %}
+    </div>
+    <div>
+      <p><strong>Usuario:</strong> {{ request.user.username }}</p>
+      <p><strong>Nombre:</strong> {{ request.user.first_name }} {{ request.user.last_name }}</p>
+      <p><strong>Email:</strong> {{ request.user.email }}</p>
+      <p><strong>Biografía:</strong> {{ profile.bio|default:"—" }}</p>
+      <p><strong>Cumpleaños:</strong> {{ profile.birthday|date:"Y-m-d"|default:"—" }}</p>
+
+      <p>
+        <a class="btn" href="{% url 'profile_edit' %}">✏️ Editar perfil</a>
+        <a class="btn" href="{% url 'password_change' %}">🔒 Cambiar contraseña</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}

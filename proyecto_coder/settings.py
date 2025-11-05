@@ -15,7 +15,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'coder',  # 👈 tu app
+    'ckeditor',
+    'pages',
+    'accounts',
+    'messaging',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -32,8 +37,8 @@ ROOT_URLCONF = 'proyecto_coder.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # 👈 ya no necesitamos carpeta externa
-        'APP_DIRS': True,  # 👈 buscará en coder/templates
+        'DIRS': [BASE_DIR / 'templates'],  # <- agrega esta línea si no está
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

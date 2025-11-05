@@ -8,3 +8,7 @@ urlpatterns = [
     path("leads/nuevo/", lead_create, name="lead_create"),
     path("clientes/buscar/", cliente_search, name="cliente_search"),
 ]
+
+from django.urls import path, include
+# ...
+path('accounts/', include('accounts.urls')),

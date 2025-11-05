@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}SUR Consulting — Home{% endblock %}
+
+{% block content %}
+  <h1>Somos SUR Consulting</h1>
+  <p>
+    Acompañamos a empresas en <strong>Finanzas & Control de Gestión</strong>, 
+    <strong>Contabilidad & Tributaria</strong> y <strong>Remuneraciones</strong>.
+  </p>
+
+  <hr>
+
+  <h2>¿Qué hacemos?</h2>
+  <ul>
+    <li>Modelos financieros y reportes ejecutivos</li>
+    <li>Estados financieros IFRS y cumplimiento tributario</li>
+    <li>Implementación y migración de ERP (Kame, Uwigo, etc.)</li>
+    <li>Procesos de conciliación, chipax y control interno</li>
+  </ul>
+
+  <p>
+    Revisa nuestras últimas publicaciones en <a class="btn btn-primary" href="{% url 'page_list' %}">Pages</a>
+    o conoce más <a class="btn" href="{% url 'about' %}">About</a>.
+  </p>
+{% endblock %}

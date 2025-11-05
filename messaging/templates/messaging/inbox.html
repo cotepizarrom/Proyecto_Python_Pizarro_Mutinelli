@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Inbox — SUR Consulting{% endblock %}
+{% block content %}
+  <h1>Mensajes recibidos</h1>
+
+  <p><a class="btn btn-primary" href="{% url 'msg_compose' %}">+ Nuevo mensaje</a></p>
+
+  {% if messages_list %}
+    <ul>
+      {% for m in messages_list %}
+        <li style="margin-bottom:10px;">
+          <strong>De:</strong> {{ m.sender.username }}
+          <small>— {{ m.created_at|date:"Y-m-d H:i" }}</small>
+          {% if not m.is_read %}<span style="margin-left:8px;">• Sin leer</span>{% endif %}<br>
+          {{ m.body|truncatechars:100 }}<br>
+          <a href="{% url 'msg_thread' m.sender.username %}">Abrir conversación</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p><em>No tienes mensajes aún.</em></p>
+  {% endif %}
+{% endblock %}

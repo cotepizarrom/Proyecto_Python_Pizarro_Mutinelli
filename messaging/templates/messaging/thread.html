@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Conversación con {{ other.username }} — SUR Consulting{% endblock %}
+{% block content %}
+  <h1>Conversación con {{ other.username }}</h1>
+
+  <div style="border:1px solid #e6f3f3; border-radius:10px; padding:12px; margin-bottom:16px;">
+    {% if messages_thread %}
+      {% for m in messages_thread %}
+        <div style="margin-bottom:10px;">
+          <strong>{{ m.sender.username }}</strong>
+          <small> — {{ m.created_at|date:"Y-m-d H:i" }}</small><br>
+          {{ m.body|linebreaks }}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p><em>No hay mensajes en este hilo.</em></p>
+    {% endif %}
+  </div>
+
+  <h3>Responder</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary" type="submit">Enviar</button>
+    <a class="btn" href="{% url 'msg_inbox' %}">Volver al inbox</a>
+  </form>
+{% endblock %}
