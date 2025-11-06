@@ -120,11 +120,17 @@
   <a href="{% url 'profile' %}">Perfil</a>
   <a href="{% url 'password_change' %}">Contraseña</a>
   <span style="opacity:.9; margin:0 6px;">Hola, {{ user.username }}</span>
-  <a href="{% url 'logout' %}">Logout</a>
-  {% else %}
+
+  <form method="post" action="{% url 'logout' %}" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit" style="background:none;border:none;color:inherit;padding:6px 10px;font-weight:600;border-radius:8px;cursor:pointer;">
+      Logout
+    </button>
+  </form>
+{% else %}
   <a href="{% url 'login' %}">Login</a>
   <a class="btn btn-primary" href="{% url 'signup' %}">Signup</a>
-  {% endif %}
+{% endif %}
   </nav>
 
   <div class="container">
